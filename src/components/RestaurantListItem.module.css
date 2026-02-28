@@ -1,0 +1,31 @@
+.card {
+  display: block;
+  text-decoration: none;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.content {
+  text-align: left;
+}
+
+.title {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--color-text-subtle);
+  font-size: 0.875rem;
+}

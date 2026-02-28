@@ -1,5 +1,6 @@
 import type { Restaurant } from '../types/restaurant'
 import { RestaurantListItem } from '../components/RestaurantListItem'
+import styles from './RestaurantList.module.css'
 
 interface RestaurantListProps {
   restaurants: Restaurant[]
@@ -7,7 +8,7 @@ interface RestaurantListProps {
 
 export function RestaurantList({ restaurants }: RestaurantListProps) {
   return (
-    <div>
+    <div className={styles.list}>
       {restaurants.map((restaurant) => (
         <RestaurantListItem key={restaurant.objectId} restaurant={restaurant} />
       ))}

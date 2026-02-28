@@ -1,0 +1,13 @@
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  text-align: left;
+}
+
+.label p {
+  margin: 0;
+}
