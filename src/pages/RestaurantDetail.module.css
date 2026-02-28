@@ -1,0 +1,65 @@
+.image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.body {
+  padding: 1rem;
+  text-align: left;
+}
+
+.title {
+  margin: 0 0 0.25rem;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.cuisines {
+  margin: 0;
+  color: var(--color-text-subtle);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.section {
+  margin: 1rem 0;
+}
+
+.sectionValue {
+  margin: 0;
+}
+
+.deals {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.deal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.redeemButton {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  background: none;
+  cursor: pointer;
+  border-radius: 999px;
+}
+
+.dealDiscount {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.dealMeta {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-subtle);
+}
