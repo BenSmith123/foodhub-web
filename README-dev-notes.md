@@ -55,3 +55,7 @@ If I use AI I'll clearly indicate where and note why
 **Out of scope**
 
 - CI/CD
+
+# AI USEAGE
+
+- I've marked the AI useage with code comments prefixed with "AI: ..."

@@ -1,1 +1,1 @@
-export const eatclubApiUrl = 'https://eccdn.com.au/misc/challengedata.json'
+export const restaurantsApiEndpoint = '/api/misc/challengedata.json'
