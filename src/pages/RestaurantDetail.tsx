@@ -56,7 +56,10 @@ export function RestaurantDetail({ restaurants }: RestaurantDetailProps) {
           {sortedDeals.map((deal) => (
             <div key={deal.objectId} className={styles.deal}>
               <div>
-                <p className={styles.dealDiscount}>⚡️{deal.discount}% off</p>
+                <p className={styles.dealDiscount}>
+                  {deal.lightning && <span aria-label="Lightning deal">⚡️</span>}
+                  {deal.discount}% off
+                </p>
                 <p className={styles.dealMeta}>{getDealTimeRange(deal)}</p>
                 <p className={styles.dealMeta}>{deal.qtyLeft} left</p>
               </div>
