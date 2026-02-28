@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import axios from 'axios'
 import { RestaurantDetail } from './pages/RestaurantDetail'
 import { RestaurantList } from './pages/RestaurantList'
+import { NavBar } from './components/NavBar'
 import { restaurantsApiEndpoint } from './utils/config'
 import type { Restaurant } from './types/restaurant'
 import { restaurantsResponseSchema } from './utils/schema'
@@ -34,11 +35,14 @@ function App() {
   }, [])
 
   return (
-    <Routes>
+    <>
+      <NavBar />
+      <Routes>
       <Route path="/" element={<RestaurantList restaurants={restaurants} />} />
       <Route path="/restaurants/:id" element={<RestaurantDetail restaurants={restaurants} />} />
       {/* TODO - fallback route */}
-    </Routes>
+      </Routes>
+    </>
   )
 }
 
