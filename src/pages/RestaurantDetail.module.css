@@ -3,6 +3,8 @@
   aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .body {
@@ -49,6 +51,7 @@
   background: none;
   cursor: pointer;
   border-radius: 999px;
+  align-self: center;
 }
 
 .dealDiscount {

@@ -1,7 +1,9 @@
 :root {
-  --color-primary: #e8001c;
+  --color-primary: #bf381d;
   --color-text: #111;
   --color-text-subtle: #777;
+  --radius: 8px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

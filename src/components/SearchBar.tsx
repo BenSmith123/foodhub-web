@@ -1,4 +1,5 @@
 import type { ChangeEvent } from 'react'
+import styles from './SearchBar.module.css'
 
 interface SearchBarProps {
   value: string
@@ -10,6 +11,7 @@ export function SearchBar({ value, onChange }: SearchBarProps) {
 
   return (
     <input
+      className={styles.input}
       type="search"
       placeholder="🔍 e.g. chinese, pizza"
       value={value}
