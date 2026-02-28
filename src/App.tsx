@@ -1,11 +1,13 @@
 import './App.css'
 import { useEffect, useState } from 'react'
+
 import { Route, Routes } from 'react-router-dom'
 import axios from 'axios'
 import { RestaurantDetail } from './pages/RestaurantDetail'
 import { RestaurantList } from './pages/RestaurantList'
 import { restaurantsApiEndpoint } from './utils/config'
 import type { Restaurant } from './types/restaurant'
+import { restaurantsResponseSchema } from './utils/schema'
 
 function App() {
   // TODO - replace this with state management/hook
@@ -16,8 +18,10 @@ function App() {
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const { data } = await axios.get<{ restaurants: Restaurant[] }>(restaurantsApiEndpoint)
-        setRestaurants(data.restaurants)
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        const { data } = await axios.get(restaurantsApiEndpoint) // axios always returns { data }
+        const parsed = restaurantsResponseSchema.parse(data)
+        setRestaurants(parsed.restaurants)
       } catch (error) {
         console.error(error)
         setError('Failed to load restaurants')
@@ -31,14 +35,8 @@ function App() {
 
   return (
     <Routes>
-      <Route
-        path="/"
-        element={<RestaurantList restaurants={restaurants} loading={loading} error={error} />}
-      />
-      <Route
-        path="/restaurants/:id"
-        element={<RestaurantDetail restaurants={restaurants} loading={loading} />}
-      />
+      <Route path="/" element={<RestaurantList restaurants={restaurants} />} />
+      <Route path="/restaurants/:id" element={<RestaurantDetail restaurants={restaurants} />} />
       {/* TODO - fallback route */}
     </Routes>
   )

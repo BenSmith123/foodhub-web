@@ -7,19 +7,19 @@ export interface Restaurant {
   suburb: string
   cuisines: string[]
   imageLink: string
-  open: string // TODO - date format?
-  close: string // TODO - date format?
+  open: string
+  close: string
   deals: Deal[]
 }
 
 export interface Deal {
   objectId: string
-  discount: string // I assume this is always a percentage - might be worth renaming 'discountPercent'
-  dineIn: string // this should be boolean
-  lightning: string // same here ^
+  discount: number
+  dineIn: boolean
+  lightning: boolean
   open?: string
   close?: string
   start?: string
   end?: string
-  qtyLeft: string // this should be a number
+  qtyLeft: number
 }
