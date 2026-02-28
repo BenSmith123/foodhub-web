@@ -1,5 +1,7 @@
+import { useMemo } from 'react'
 import type { Restaurant } from '../types/restaurant'
 import { RestaurantListItem } from '../components/RestaurantListItem'
+import { sortByBestDeal } from '../utils/helpers'
 import styles from './RestaurantList.module.css'
 
 interface RestaurantListProps {
@@ -7,9 +9,11 @@ interface RestaurantListProps {
 }
 
 export function RestaurantList({ restaurants }: RestaurantListProps) {
+  const sortedRestaurants = useMemo(() => sortByBestDeal(restaurants), [restaurants])
+
   return (
     <div className={styles.list}>
-      {restaurants.map((restaurant) => (
+      {sortedRestaurants.map((restaurant) => (
         <RestaurantListItem key={restaurant.objectId} restaurant={restaurant} />
       ))}
     </div>

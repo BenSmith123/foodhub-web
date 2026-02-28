@@ -51,6 +51,7 @@ export function RestaurantDetail({ restaurants }: RestaurantDetailProps) {
 
         <hr />
 
+        {/* TODO - move this into seperate component (DealsList?) */}
         <div className={styles.deals}>
           {sortedDeals.map((deal) => (
             <div key={deal.objectId} className={styles.deal}>
