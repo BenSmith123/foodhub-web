@@ -1,7 +1,8 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import type { Restaurant } from '../types/restaurant'
 import { RestaurantListItem } from '../components/RestaurantListItem'
-import { sortByBestDeal } from '../utils/helpers'
+import { SearchBar } from '../components/SearchBar'
+import { sortByBestDeal, filterRestaurantsByQuery } from '../utils/helpers'
 import styles from './RestaurantList.module.css'
 
 interface RestaurantListProps {
@@ -9,13 +10,22 @@ interface RestaurantListProps {
 }
 
 export function RestaurantList({ restaurants }: RestaurantListProps) {
-  const sortedRestaurants = useMemo(() => sortByBestDeal(restaurants), [restaurants])
+  const [query, setQuery] = useState('')
+
+  // note - heaps of logic here and is rendered a lot - def requires memoization
+  const restaurantsSorted = useMemo(
+    () => sortByBestDeal(filterRestaurantsByQuery(restaurants, query)),
+    [restaurants, query],
+  )
 
   return (
-    <div className={styles.list}>
-      {sortedRestaurants.map((restaurant) => (
-        <RestaurantListItem key={restaurant.objectId} restaurant={restaurant} />
-      ))}
+    <div>
+      <SearchBar value={query} onChange={setQuery} />
+      <div className={styles.list}>
+        {restaurantsSorted.map((restaurant) => (
+          <RestaurantListItem key={restaurant.objectId} restaurant={restaurant} />
+        ))}
+      </div>
     </div>
   )
 }

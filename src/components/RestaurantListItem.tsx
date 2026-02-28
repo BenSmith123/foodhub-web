@@ -21,7 +21,6 @@ export function RestaurantListItem({ restaurant }: RestaurantListItemProps) {
           src={imageLink}
           alt=""
           aria-hidden
-          loading="lazy"
           className={styles.image}
           onError={(e) => {
             e.currentTarget.src = fallbackImageSrcUrl // TODO - replace this fallback image with something more useful
