@@ -1,4 +1,5 @@
 import type { Restaurant } from '../types/restaurant'
+import { RestaurantListItem } from '../components/RestaurantListItem'
 
 interface RestaurantListProps {
   restaurants: Restaurant[]
@@ -7,8 +8,9 @@ interface RestaurantListProps {
 export function RestaurantList({ restaurants }: RestaurantListProps) {
   return (
     <div>
-      Restaurant List
-      <div>{JSON.stringify(restaurants)}</div>
+      {restaurants.map((restaurant) => (
+        <RestaurantListItem key={restaurant.objectId} restaurant={restaurant} />
+      ))}
     </div>
   )
 }
