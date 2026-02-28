@@ -59,3 +59,16 @@ If I use AI I'll clearly indicate where and note why
 # AI USEAGE
 
 - I've marked the AI useage with code comments prefixed with "AI: ..."
+
+# Final notes - whats missing, next steps
+
+- use an icon library instead of emojis
+- ADD TESTS
+  - especially to the logic in helpers
+  - might be scenarios that can cause issues if missing data
+- Search debouncin & no results component
+- loading state designs
+- failure designs
+- apply bold font where needed
+- remove hardcoded "Takeaway · Order online" with real data
+-
